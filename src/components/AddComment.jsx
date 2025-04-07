@@ -14,7 +14,6 @@ class AddComment extends Component {
 
   sendReview = (e) => {
     e.preventDefault()
-    // facciamo la post, inviando come body this.state.review
     fetch(URL, {
       method: 'POST',
       body: JSON.stringify(this.state.review),
