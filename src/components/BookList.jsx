@@ -1,72 +1,55 @@
 import { Container, Form, Row, Col } from 'react-bootstrap'
 import SingleBook from './SingleBook'
-import { Component } from 'react'
+import { useState } from 'react'
 import CommentArea from './CommentArea'
 
-class BookList extends Component {
-  state = {
-    search: '', 
-    asin: '', 
+const BookList = ({ arrayOfBooks }) => {
+  
+  const [search, setSearch] = useState('')
+  const [asin, setAsin] = useState('')
+
+  const changeAsin = (newAsin) => {
+    setAsin(newAsin)
   }
 
-  changeAsin = (newAsin) => {
-    this.setState({
-      asin: newAsin,
-    })
-  }
-
-  render() {
     return (
       <Container>
-        <Row className="justify-content-center my-5">
+        <Row className="justify-content-start mb-3 mt-5 w-50">
           <Col xs={12} md={6}>
             <Form.Control
               type="text"
               placeholder="cerca un libro"
-              value={this.state.search}
-              onChange={(e) => {
-                this.setState({
-                  search: e.target.value,
-                })
-              }}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </Col>
         </Row>
+
         <Row>
           <Col xs={12} md={8}>
             <Row>
-              {this.props.arrayOfBooks
-                .filter((libro) => {
-                  if (
-                    libro.title
-                      .toLowerCase()
-                      .includes(this.state.search.toLowerCase())
-                  ) {
-                    return true
-                  } else {
-                    return false
-                  }
-                })
-
-                .map((libro) => {
-                  return (
-                    <SingleBook
-                      book={libro}
-                      key={libro.asin}
-                      cambiaAsin={this.changeAsin}
-                      asinLibroSelezionato={this.state.asin}
-                    />
-                  )
-                })}
+              {arrayOfBooks
+                .filter((libro) =>
+                  libro.title.toLowerCase().includes(search.toLowerCase())
+                )
+                .map((libro) => (
+                  <SingleBook
+                    key={libro.asin}
+                    book={libro}
+                    cambiaAsin={changeAsin}
+                    asinLibroSelezionato={asin}
+                  />
+                ))}
             </Row>
           </Col>
+
           <Col xs={12} md={4}>
-            <CommentArea asin={this.state.asin} />
+            <CommentArea asin={asin} />
           </Col>
-        </Row>
+          
+      </Row>
       </Container>
     )
-  }
 }
 
 export default BookList

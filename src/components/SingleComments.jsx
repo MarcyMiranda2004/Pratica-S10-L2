@@ -2,7 +2,7 @@ import { Button, ListGroup } from 'react-bootstrap'
 
 const URL = 'https://striveschool-api.herokuapp.com/api/comments/'
 
-const SingleComment = function (props) {
+const SingleComment = (props) => {
   const deleteComment = () => {
     fetch(URL + props.recensione._id, {
       method: 'DELETE',
@@ -26,7 +26,7 @@ const SingleComment = function (props) {
   return (
     <ListGroup.Item className="d-flex justify-content-between">
       <div className="d-flex flex-wrap align-content-center">
-        {props.recensione.comment} | {props.recensione.rate}/5
+        <strong>{props.recensione.author}</strong>: {props.recensione.comment} | {props.recensione.rate}/5
       </div>
       <Button variant="danger" onClick={deleteComment}>
         <i className="bi bi-trash-fill"></i>

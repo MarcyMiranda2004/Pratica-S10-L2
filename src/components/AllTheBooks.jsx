@@ -1,7 +1,7 @@
 import { Card, Col, Container, Row, Button } from 'react-bootstrap'
 import scifi from '../data/scifi.json'
 
-const AllTheBooks = function () {
+const AllTheBooks = () => {
   return (
     <Container>
       <Row>

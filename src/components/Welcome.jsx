@@ -1,20 +1,19 @@
 import Alert from 'react-bootstrap/Alert'
 
-function Welcome() {
+const Welcome = () => {
   return (
-    <Alert variant="success">
-      <Alert.Heading>Hey, nice to see you</Alert.Heading>
+    <div className='d-flex justify-content-center align-items-center mt-5' >
+      <Alert variant="primary" className='p-3 w-50 text-center'>
+      <Alert.Heading>Benvenuto Nella Nostra Libreria !</Alert.Heading>
       <p>
-        Aww yeah, you successfully read this important alert message. This
-        example text is going to run a bit longer so that you can see how
-        spacing within an alert works with this kind of content.
+        Sfoglia il nostro catalogo e dicci cosa pensi dei nostri titoli editoriali !
       </p>
       <hr />
-      <p className="mb-0">
-        Whenever you need to, be sure to use margin utilities to keep things
-        nice and tidy.
+      <p className="mb-0 ">
+       se hai bisogno di aiuto contatta i nostri addetti.
       </p>
     </Alert>
+    </div>
   )
 }
 

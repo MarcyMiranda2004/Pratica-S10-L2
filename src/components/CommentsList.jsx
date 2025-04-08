@@ -1,7 +1,7 @@
 import { ListGroup } from 'react-bootstrap'
 import SingleComment from './SingleComments'
 
-const CommentsList = function (props) {
+const CommentsList = (props) =>{
   return (
     <ListGroup>
       {props.reviews.map((recensione) => {

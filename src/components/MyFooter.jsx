@@ -1,10 +1,14 @@
-const MyFooter = function () {
+import '../index.css'
+
+const MyFooter = () => {
   return (
-    <div>
-      <p className="py-2 bg-body-secondary text-center">
-        EPICODE - {new Date().getFullYear()}{' '}
-      </p>
-    </div>
+    <footer>
+      <div>
+        <p className="py-2 bg- text-center text-white">
+          &copy; Marcello Miranda - 2025
+        </p>
+      </div>
+   </footer>
   )
 }
 

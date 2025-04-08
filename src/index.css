@@ -1,3 +1,12 @@
+body {
+  background-color: rgb(199, 237, 225) !important;
+}
+
+.Navbar,
+footer {
+  background-color: #022b3e !important;
+}
+
 .selectedBook {
-  border: 2px solid red !important;
+  border: 3px solid rgb(186, 13, 13) !important;
 }
