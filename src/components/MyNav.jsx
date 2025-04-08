@@ -10,12 +10,12 @@ const MyNav = () => {
     <Navbar collapseOnSelect expand="lg" className="Navbar">
       <Container>
         <Navbar.Brand href="#home"><img src={Logo} alt="logo" className='w-25'/></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" className='text-white'/>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className='text-white bg-white'/>
 
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" className='text-white'>
           <Nav className="me-auto">
 
-            <Nav.Link href="#features" className='text-white'>Home</Nav.Link>
+            <Nav.Link href="#home" className='text-white'>Home</Nav.Link>
             <Nav.Link href="#pricing" className='text-white'>Pricing</Nav.Link>
 
             <NavDropdown title="Function" id="collapsible-nav-dropdown" className='text-white'>

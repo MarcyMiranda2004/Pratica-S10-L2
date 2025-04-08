@@ -7,6 +7,10 @@ footer {
   background-color: #022b3e !important;
 }
 
+.navbar .dropdown-toggle {
+  color: white !important;
+}
+
 .selectedBook {
   border: 3px solid rgb(186, 13, 13) !important;
 }
